@@ -10,6 +10,6 @@ for line in f:
         "count": int(tmp[0])
     })
 for ip in ips:
-    if ip["count"] > 1:
-        #os.system("iptables -A INPUT -p tcp -s {} --dport 22 -j DROP".format(ip["ip"]))
+    if ip["count"] > 5:
+        os.system("iptables -A INPUT -p tcp -s {} --dport 22 -j DROP".format(ip["ip"]))
         f_out.write(str(ip))
